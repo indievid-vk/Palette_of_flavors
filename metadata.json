@@ -1,0 +1,6 @@
+{
+  "name": "Палитра вкусов",
+  "description": "PWA-приложение для подбора кондитерских вкусовых сочетаний, интерактивного Колеса вкусов и AI-генератора рецептур",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
