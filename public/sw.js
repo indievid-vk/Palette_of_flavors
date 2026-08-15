@@ -1,12 +1,17 @@
-const CACHE_NAME = 'palette-flavors-v2';
+const CACHE_NAME = 'palette-flavors-v3';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/pwa-192.png',
-  '/pwa-512.png',
-  '/icon.svg',
-  '/favicon.png'
+  './',
+  './index.html',
+  './manifest.json',
+  './pwa-192.png',
+  './pwa-256.png',
+  './pwa-512.png',
+  './icon_192.png',
+  './icon_256.png',
+  './icon_512.png',
+  './apple-touch-icon.png',
+  './icon.svg',
+  './favicon.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -67,7 +72,7 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           if (event.request.headers.get('accept')?.includes('text/html')) {
-            return caches.match('/index.html');
+            return caches.match('./index.html').then((r) => r || caches.match('/index.html') || caches.match('./'));
           }
         });
     })

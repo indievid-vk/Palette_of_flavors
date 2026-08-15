@@ -13,7 +13,7 @@ export default defineConfig(() => {
       VitePWA({
         registerType: 'prompt',
         injectRegister: 'auto',
-        includeAssets: ['favicon.png', 'apple-touch-icon.png', 'icon.svg', 'pwa-192.png', 'pwa-256.png', 'pwa-512.png'],
+        includeAssets: ['favicon.png', 'apple-touch-icon.png', 'icon.svg', 'pwa-192.png', 'pwa-256.png', 'pwa-512.png', 'icon_192.png', 'icon_256.png', 'icon_512.png'],
         manifest: {
           name: 'Палитра вкусов — Palette of Flavors',
           short_name: 'Палитра',
@@ -23,40 +23,59 @@ export default defineConfig(() => {
           display: 'standalone',
           orientation: 'portrait',
           start_url: './',
+          scope: './',
           icons: [
             {
-              src: '/pwa-192.png',
+              src: 'pwa-192.png',
               sizes: '192x192',
               type: 'image/png',
               purpose: 'any'
             },
             {
-              src: '/pwa-256.png',
+              src: 'pwa-256.png',
               sizes: '256x256',
               type: 'image/png',
               purpose: 'any'
             },
             {
-              src: '/pwa-512.png',
+              src: 'pwa-512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any'
             },
             {
-              src: '/pwa-512.png',
+              src: 'pwa-512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable'
             },
             {
-              src: '/icon.svg',
+              src: 'icon_192.png',
+              sizes: '192x192',
+              type: 'image/png',
+              purpose: 'any'
+            },
+            {
+              src: 'icon_256.png',
+              sizes: '256x256',
+              type: 'image/png',
+              purpose: 'any'
+            },
+            {
+              src: 'icon_512.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'any'
+            },
+            {
+              src: 'icon.svg',
               sizes: 'any',
               type: 'image/svg+xml'
             }
           ]
         },
         workbox: {
-          navigateFallback: '/index.html',
+          navigateFallback: 'index.html',
           maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
           globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
           cleanupOutdatedCaches: true,

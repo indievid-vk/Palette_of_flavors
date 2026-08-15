@@ -257,18 +257,30 @@ async function generate() {
     .resize(512, 512)
     .png()
     .toFile(path.join(publicDir, 'pwa-512.png'));
+  await sharp(Buffer.from(svgIcon))
+    .resize(512, 512)
+    .png()
+    .toFile(path.join(publicDir, 'icon_512.png'));
 
   // Generate 256x256
   await sharp(Buffer.from(svgIcon))
     .resize(256, 256)
     .png()
     .toFile(path.join(publicDir, 'pwa-256.png'));
+  await sharp(Buffer.from(svgIcon))
+    .resize(256, 256)
+    .png()
+    .toFile(path.join(publicDir, 'icon_256.png'));
 
   // Generate 192x192
   await sharp(Buffer.from(svgIcon))
     .resize(192, 192)
     .png()
     .toFile(path.join(publicDir, 'pwa-192.png'));
+  await sharp(Buffer.from(svgIcon))
+    .resize(192, 192)
+    .png()
+    .toFile(path.join(publicDir, 'icon_192.png'));
 
   // Generate Apple Touch Icon 180x180
   await sharp(Buffer.from(svgIcon))
