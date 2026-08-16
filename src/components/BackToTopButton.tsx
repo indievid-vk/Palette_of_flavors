@@ -29,11 +29,11 @@ export const BackToTopButton: React.FC = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-white/90 text-[#3D231D] shadow-lg border border-white/80 backdrop-blur-md hover:bg-white hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center group"
+      className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-white/90 text-[#23372B] shadow-lg border border-[#DAE8DF] backdrop-blur-md hover:bg-white hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center group"
       title="Наверх"
       aria-label="Вернуться к началу страницы"
     >
-      <ArrowUp className="w-5 h-5 text-[#FF758F] group-hover:-translate-y-0.5 transition-transform" />
+      <ArrowUp className="w-5 h-5 text-[#5E8A6E] group-hover:-translate-y-0.5 transition-transform" />
     </button>
   );
 };

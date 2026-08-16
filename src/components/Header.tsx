@@ -51,18 +51,19 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-start sm:items-center justify-between gap-2">
             <div className="flex flex-col gap-0.5">
               <div className="flex items-center gap-2 flex-wrap">
-                <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[#3D231D] font-serif flex items-center gap-2">
+                <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[#23372B] font-serif flex items-center gap-2">
                   Палитра вкусов
                 </h1>
-                <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider text-[#7C5A52] uppercase glass-pill px-3 py-1 rounded-full shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-[#FF6B8B] shadow-2xs"></span>
-                  <span className="w-2 h-2 rounded-full bg-[#34D399] shadow-2xs"></span>
-                  <span className="w-2 h-2 rounded-full bg-[#60A5FA] shadow-2xs"></span>
-                  <span className="w-2 h-2 rounded-full bg-[#3D231D] shadow-2xs"></span>
+                <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider text-[#556E5F] uppercase glass-pill px-3 py-1 rounded-full shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-[#7E9F86] shadow-2xs"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#F5A66B] shadow-2xs"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#E8899E] shadow-2xs"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#7F9CB9] shadow-2xs"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#23372B] shadow-2xs"></span>
                   Palette of Flavors
                 </span>
               </div>
-              <p className="text-[11px] sm:text-xs text-[#7C5A52] font-medium leading-snug">
+              <p className="text-[11px] sm:text-xs text-[#556E5F] font-medium leading-snug">
                 Интерактивный гид по кондитерским и гастрономическим сочетаниям
               </p>
             </div>
@@ -70,11 +71,11 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Info (i) Button in top right corner */}
             <button
               onClick={onOpenAbout}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold glass-button text-[#3D231D] hover:bg-white/90 transition-all active:scale-95 cursor-pointer shrink-0 mt-0.5 sm:mt-0"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold glass-button text-[#23372B] hover:bg-white/90 transition-all active:scale-95 cursor-pointer shrink-0 mt-0.5 sm:mt-0 border border-[#B6CEBE]/50"
               title="О приложении"
               aria-label="О приложении"
             >
-              <Info className="w-4 h-4 text-[#FF758F]" />
+              <Info className="w-4 h-4 text-[#5E8A6E]" />
               <span className="hidden sm:inline">О приложении</span>
             </button>
           </div>
@@ -94,21 +95,21 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Add Custom Pairing */}
             <button
               onClick={onOpenAddModal}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold glass-button text-[#3D231D] hover:bg-white/90 transition-all whitespace-nowrap active:scale-95 cursor-pointer"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold glass-button text-[#23372B] hover:bg-white/90 transition-all whitespace-nowrap active:scale-95 cursor-pointer"
             >
-              <PlusCircle className="w-4 h-4 text-emerald-600" />
+              <PlusCircle className="w-4 h-4 text-[#5E8A6E]" />
               <span>+ Пара</span>
             </button>
 
             {/* Favorites Button */}
             <button
               onClick={onOpenFavorites}
-              className="relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold glass-button text-[#3D231D] hover:bg-white/90 transition-all whitespace-nowrap active:scale-95 cursor-pointer"
+              className="relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold glass-button text-[#23372B] hover:bg-white/90 transition-all whitespace-nowrap active:scale-95 cursor-pointer"
             >
-              <Heart className={`w-4 h-4 ${favoritesCount > 0 ? 'text-[#FF4D6D] fill-[#FF4D6D]' : 'text-[#7C5A52]'}`} />
+              <Heart className={`w-4 h-4 ${favoritesCount > 0 ? 'text-[#E0657F] fill-[#E0657F]' : 'text-[#718577]'}`} />
               <span>Избранное</span>
               {favoritesCount > 0 && (
-                <span className="ml-0.5 bg-[#FF4D6D] text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full shadow-2xs">
+                <span className="ml-0.5 bg-[#E0657F] text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full shadow-2xs">
                   {favoritesCount}
                 </span>
               )}
@@ -118,9 +119,9 @@ export const Header: React.FC<HeaderProps> = ({
             {deferredPrompt && (
               <button
                 onClick={handleInstallClick}
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold glass-button text-sky-700 hover:bg-sky-50 transition-all whitespace-nowrap active:scale-95 cursor-pointer"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold glass-button text-[#446882] hover:bg-[#EBF2F8] transition-all whitespace-nowrap active:scale-95 cursor-pointer"
               >
-                <Download className="w-4 h-4 text-sky-600" />
+                <Download className="w-4 h-4 text-[#5C7C99]" />
                 <span>Установить</span>
               </button>
             )}

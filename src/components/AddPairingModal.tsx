@@ -66,35 +66,35 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full glass-button text-[#2C1E1C] hover:bg-white transition-colors cursor-pointer z-10"
+          className="absolute top-5 right-5 p-2 rounded-full glass-button text-[#23372B] hover:bg-white transition-colors cursor-pointer z-10"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center shadow-md">
+          <div className="w-10 h-10 rounded-xl bg-[#5E8A6E] text-white flex items-center justify-center shadow-md">
             <PlusCircle className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-[#2C1E1C] font-serif">
+            <h2 className="text-xl font-bold text-[#23372B] font-serif">
               Добавить авторскую пару
             </h2>
-            <p className="text-xs text-[#6B5A57]">
-              Сохраняется в автономную локальную база данных IndexedDB
+            <p className="text-xs text-[#556E5F]">
+              Сохраняется в автономную локальную базу данных
             </p>
           </div>
         </div>
 
         {savedSuccess ? (
           <div className="py-12 flex flex-col items-center justify-center text-center space-y-3">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center animate-bounce">
+            <div className="w-16 h-16 rounded-full bg-[#E8F1EB] text-[#345741] flex items-center justify-center animate-bounce">
               <Check className="w-8 h-8" />
             </div>
-            <h3 className="text-lg font-bold text-[#2C1E1C] font-serif">
+            <h3 className="text-lg font-bold text-[#23372B] font-serif">
               Сочетание успешно сохранено!
             </h3>
-            <p className="text-xs text-[#6B5A57]">
+            <p className="text-xs text-[#556E5F]">
               Новая пара доступна в офлайн-поиске и фильтрах.
             </p>
           </div>
@@ -104,7 +104,7 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
             {/* Primary Ingredient */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Первый ингредиент *
                 </label>
                 <input
@@ -113,18 +113,18 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
                   value={primaryName}
                   onChange={(e) => setPrimaryName(e.target.value)}
                   placeholder="напр. Малина"
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-[#4A2E2B]/20 text-xs text-[#2C1E1C] focus:outline-none focus:ring-2 focus:ring-[#E29578]/50"
+                  className="w-full px-3 py-2 rounded-xl glass-input text-xs text-[#23372B] focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
                 />
               </div>
 
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Категория первого *
                 </label>
                 <select
                   value={primaryCategory}
                   onChange={(e) => setPrimaryCategory(e.target.value as CategoryId)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-[#4A2E2B]/20 text-xs text-[#2C1E1C] focus:outline-none focus:ring-2 focus:ring-[#E29578]/50"
+                  className="w-full px-3 py-2 rounded-xl glass-input text-xs text-[#23372B] focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
                 >
                   {CATEGORIES.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
@@ -136,7 +136,7 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
             {/* Secondary Ingredient */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Второй ингредиент *
                 </label>
                 <input
@@ -145,18 +145,18 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
                   value={secondaryName}
                   onChange={(e) => setSecondaryName(e.target.value)}
                   placeholder="напр. Эстрагон"
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-[#4A2E2B]/20 text-xs text-[#2C1E1C] focus:outline-none focus:ring-2 focus:ring-[#E29578]/50"
+                  className="w-full px-3 py-2 rounded-xl glass-input text-xs text-[#23372B] focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
                 />
               </div>
 
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Категория второго *
                 </label>
                 <select
                   value={secondaryCategory}
                   onChange={(e) => setSecondaryCategory(e.target.value as CategoryId)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-[#4A2E2B]/20 text-xs text-[#2C1E1C] focus:outline-none focus:ring-2 focus:ring-[#E29578]/50"
+                  className="w-full px-3 py-2 rounded-xl glass-input text-xs text-[#23372B] focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
                 >
                   {CATEGORIES.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
@@ -168,17 +168,17 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
             {/* Type & Applications */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Тип палитры
                 </label>
                 <div className="flex gap-2 pt-0.5">
                   <button
                     type="button"
                     onClick={() => setType('classic')}
-                    className={`flex-1 py-2 rounded-xl border font-medium ${
+                    className={`flex-1 py-2 rounded-xl border font-medium cursor-pointer transition-all ${
                       type === 'classic'
-                        ? 'bg-emerald-700 text-white border-emerald-700'
-                        : 'bg-white text-[#6B5A57] border-[#4A2E2B]/20'
+                        ? 'bg-[#345741] text-white border-[#345741] shadow-xs'
+                        : 'bg-white/80 text-[#556E5F] border-[#DAE8DF]'
                     }`}
                   >
                     Классика
@@ -186,10 +186,10 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setType('exotic')}
-                    className={`flex-1 py-2 rounded-xl border font-medium ${
+                    className={`flex-1 py-2 rounded-xl border font-medium cursor-pointer transition-all ${
                       type === 'exotic'
-                        ? 'bg-purple-700 text-white border-purple-700'
-                        : 'bg-white text-[#6B5A57] border-[#4A2E2B]/20'
+                        ? 'bg-[#934F22] text-white border-[#934F22] shadow-xs'
+                        : 'bg-white/80 text-[#556E5F] border-[#DAE8DF]'
                     }`}
                   >
                     Экзотика
@@ -198,7 +198,7 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
               </div>
 
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Теги применения (через запятую)
                 </label>
                 <input
@@ -206,14 +206,14 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
                   value={applications}
                   onChange={(e) => setApplications(e.target.value)}
                   placeholder="мусс, конфи, ганаш"
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-[#4A2E2B]/20 text-xs text-[#2C1E1C] focus:outline-none focus:ring-2 focus:ring-[#E29578]/50"
+                  className="w-full px-3 py-2 rounded-xl glass-input text-xs text-[#23372B] focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
                 />
               </div>
             </div>
 
             {/* Description */}
             <div>
-              <label className="font-semibold text-[#2C1E1C] block mb-1">
+              <label className="font-semibold text-[#23372B] block mb-1">
                 Описание комбинации
               </label>
               <textarea
@@ -221,14 +221,14 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Вкусовое описание и гармония сочетания..."
-                className="w-full px-3 py-2 rounded-xl bg-white border border-[#4A2E2B]/20 text-xs text-[#2C1E1C] focus:outline-none focus:ring-2 focus:ring-[#E29578]/50"
+                className="w-full px-3 py-2 rounded-xl glass-input text-xs text-[#23372B] focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
               />
             </div>
 
             {/* Sliders */}
-            <div className="grid grid-cols-2 gap-4 p-3 rounded-xl bg-white border border-[#4A2E2B]/10">
+            <div className="grid grid-cols-2 gap-4 p-3 rounded-xl bg-white/90 border border-[#DAE8DF]">
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Интенсивность: {intensity}/5
                 </label>
                 <input
@@ -237,12 +237,12 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
                   max="5"
                   value={intensity}
                   onChange={(e) => setIntensity(Number(e.target.value))}
-                  className="w-full accent-[#4A2E2B]"
+                  className="w-full accent-[#E28751] cursor-pointer"
                 />
               </div>
 
               <div>
-                <label className="font-semibold text-[#2C1E1C] block mb-1">
+                <label className="font-semibold text-[#23372B] block mb-1">
                   Экзотика (Уровень инновации): {risk}/5
                 </label>
                 <input
@@ -251,7 +251,7 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
                   max="5"
                   value={risk}
                   onChange={(e) => setRisk(Number(e.target.value))}
-                  className="w-full accent-rose-600"
+                  className="w-full accent-[#D96B84] cursor-pointer"
                 />
               </div>
             </div>
@@ -261,13 +261,13 @@ export const AddPairingModal: React.FC<AddPairingModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2.5 rounded-xl bg-white border border-[#4A2E2B]/20 text-[#6B5A57] font-medium"
+                className="px-4 py-2.5 rounded-xl glass-button text-[#556E5F] font-medium hover:text-[#23372B] cursor-pointer"
               >
                 Отмена
               </button>
               <button
                 type="submit"
-                className="px-6 py-2.5 rounded-xl bg-[#4A2E2B] text-white font-semibold hover:bg-[#3A2422] transition-colors"
+                className="px-6 py-2.5 rounded-xl glass-button-primary text-white font-semibold shadow hover:opacity-95 transition-colors cursor-pointer"
               >
                 Сохранить в базу
               </button>

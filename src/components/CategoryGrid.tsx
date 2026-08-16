@@ -133,7 +133,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           className={`py-2 px-1 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
             activeTab === 'categories'
               ? 'glass-button-primary text-white font-bold'
-              : 'text-[#7C5A52] hover:text-[#3D231D] hover:bg-white/50'
+              : 'text-[#556E5F] hover:text-[#23372B] hover:bg-white/50'
           }`}
         >
           <LayoutGrid className="w-3.5 h-3.5 shrink-0" />
@@ -145,7 +145,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           className={`py-2 px-1 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
             activeTab === 'ingredients'
               ? 'glass-button-primary text-white font-bold'
-              : 'text-[#7C5A52] hover:text-[#3D231D] hover:bg-white/50'
+              : 'text-[#556E5F] hover:text-[#23372B] hover:bg-white/50'
           }`}
         >
           <Utensils className="w-3.5 h-3.5 shrink-0" />
@@ -157,7 +157,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           className={`py-2 px-1 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
             activeTab === 'search'
               ? 'glass-button-primary text-white font-bold'
-              : 'text-[#7C5A52] hover:text-[#3D231D] hover:bg-white/50'
+              : 'text-[#556E5F] hover:text-[#23372B] hover:bg-white/50'
           }`}
         >
           <Search className="w-3.5 h-3.5 shrink-0" />
@@ -170,15 +170,15 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
         <div className="space-y-3 animate-fadeIn">
           
           {/* Header info */}
-          <div className="flex items-center justify-between pb-2 border-b border-[#F4A3B4]/20">
-            <span className="text-xs font-bold text-[#3D231D] font-serif">
+          <div className="flex items-center justify-between pb-2 border-b border-[#DAE8DF]">
+            <span className="text-xs font-bold text-[#23372B] font-serif">
               Категории вкусов ({CATEGORIES.length})
             </span>
 
             {activeQuickIngredient && (
               <button
                 onClick={() => onQuickSearchIngredient('')}
-                className="text-[10px] font-semibold text-[#E87A90] bg-[#E87A90]/10 hover:bg-[#E87A90]/20 px-2 py-0.5 rounded-full flex items-center gap-1 transition-colors"
+                className="text-[10px] font-semibold text-[#5E8A6E] bg-[#E8F1EB] hover:bg-[#DAE8DF] px-2 py-0.5 rounded-full flex items-center gap-1 transition-colors"
                 title="Сбросить выбранный ингредиент"
               >
                 <X className="w-3 h-3" />
@@ -193,7 +193,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
             className={`w-full p-2.5 rounded-2xl border text-left text-xs font-semibold flex items-center justify-between transition-all active:scale-98 cursor-pointer ${
               selectedCategory === 'all'
                 ? 'glass-button-primary text-white shadow-sm font-bold'
-                : 'glass-pill text-[#3D231D] hover:bg-white/90 border-white/80'
+                : 'glass-pill text-[#23372B] hover:bg-white/90 border-[#DAE8DF]'
             }`}
           >
             <div className="flex items-center gap-2">
@@ -201,7 +201,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
               <span>Все категории</span>
             </div>
             <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-              selectedCategory === 'all' ? 'bg-white/30 text-white' : 'bg-[#E87A90]/20 text-[#E87A90]'
+              selectedCategory === 'all' ? 'bg-white/30 text-white' : 'bg-[#E8F1EB] text-[#345741]'
             }`}>
               {categoryCounts['all'] || 0}
             </span>
@@ -219,8 +219,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                   key={cat.id}
                   className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                     isSelected
-                      ? 'bg-gradient-to-r from-[#4A2E2B]/90 via-[#5C3A36]/90 to-[#4A2E2B]/90 backdrop-blur-md text-white border-white/40 shadow-md ring-2 ring-[#FF758F]/50'
-                      : 'glass-pill text-[#3D231D] hover:bg-white/90 border-white/70'
+                      ? 'bg-gradient-to-r from-[#2F4F3B]/95 via-[#3B5F48]/95 to-[#2F4F3B]/95 backdrop-blur-md text-white border-[#B6CEBE]/50 shadow-md ring-2 ring-[#7E9F86]/60'
+                      : 'glass-pill text-[#23372B] hover:bg-white/90 border-[#DAE8DF]'
                   }`}
                 >
                   {/* Category Header Bar */}
@@ -230,7 +230,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
                       <span className={`p-1.5 rounded-xl shrink-0 ${
-                        isSelected ? 'bg-white/20 text-white shadow-2xs' : 'bg-[#F4A3B4]/20 text-[#E87A90]'
+                        isSelected ? 'bg-white/20 text-white shadow-2xs' : 'bg-[#E8F1EB] text-[#345741]'
                       }`}>
                         {renderCategoryIcon(cat.id, "w-4 h-4")}
                       </span>
@@ -249,7 +249,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
 
                     <div className="flex items-center gap-1.5 shrink-0 ml-1">
                       <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-                        isSelected ? 'bg-white/25 text-white' : 'bg-[#E87A90]/20 text-[#E87A90]'
+                        isSelected ? 'bg-white/25 text-white' : 'bg-[#E8F1EB] text-[#345741]'
                       }`}>
                         {count}
                       </span>
@@ -257,7 +257,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                       {isSelected ? (
                         <ChevronUp className="w-4 h-4 text-white/90" />
                       ) : (
-                        <ChevronDown className="w-4 h-4 text-[#7C5A52]" />
+                        <ChevronDown className="w-4 h-4 text-[#556E5F]" />
                       )}
                     </div>
                   </button>
@@ -267,7 +267,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     <div className="p-3 pt-2 bg-black/20 backdrop-blur-md border-t border-white/15 space-y-2 animate-fadeIn">
                       <div className="flex items-center justify-between text-[10px] uppercase font-bold text-white/80 tracking-wider">
                         <span>Ингредиенты:</span>
-                        <span className="text-[9px] text-[#FF9EAF] lowercase">нажмите для выбора</span>
+                        <span className="text-[9px] text-[#A8C3B3] lowercase">нажмите для выбора</span>
                       </div>
 
                       <div className="flex flex-wrap gap-1.5 max-h-48 overflow-y-auto pr-1 custom-scrollbar">
@@ -300,9 +300,9 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           </div>
 
           {/* Quick Frequent Tags */}
-          <div className="pt-3 border-t border-white/60 space-y-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#7C5A52] flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-[#E87A90]" />
+          <div className="pt-3 border-t border-[#DAE8DF] space-y-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#556E5F] flex items-center gap-1">
+              <Sparkles className="w-3.5 h-3.5 text-[#5E8A6E]" />
               Частые ингредиенты:
             </span>
 
@@ -316,7 +316,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     className={`text-[11px] font-medium px-2.5 py-1 rounded-xl border transition-all cursor-pointer ${
                       isActive
                         ? 'glass-button-primary text-white shadow-xs font-bold'
-                        : 'glass-pill text-[#3D231D] hover:bg-white/90 border-white/70'
+                        : 'glass-pill text-[#23372B] hover:bg-white/90 border-[#DAE8DF]'
                     }`}
                   >
                     #{ing}
@@ -334,15 +334,15 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
         <div className="space-y-3 animate-fadeIn">
           
           {/* Header & Inner Search */}
-          <div className="space-y-2 pb-2 border-b border-white/60">
+          <div className="space-y-2 pb-2 border-b border-[#DAE8DF]">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-[#3D231D] font-serif">
+              <span className="text-xs font-bold text-[#23372B] font-serif">
                 Все ингредиенты ({allUniqueIngredients.length})
               </span>
               {activeQuickIngredient && (
                 <button
                   onClick={() => onQuickSearchIngredient('')}
-                  className="text-[10px] font-semibold text-[#E87A90] glass-pill px-2.5 py-0.5 rounded-full flex items-center gap-1 transition-colors"
+                  className="text-[10px] font-semibold text-[#5E8A6E] glass-pill px-2.5 py-0.5 rounded-full flex items-center gap-1 transition-colors"
                 >
                   <X className="w-3 h-3" />
                   <span>Сброс ({activeQuickIngredient})</span>
@@ -357,13 +357,13 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 value={ingredientFilterQuery}
                 onChange={(e) => setIngredientFilterQuery(e.target.value)}
                 placeholder="Фильтр ингредиентов..."
-                className="w-full pl-8 pr-8 py-2 rounded-xl glass-input text-[#3D231D] text-xs placeholder:text-[#7C5A52]/60 focus:outline-none focus:ring-2 focus:ring-[#E87A90]/50"
+                className="w-full pl-8 pr-8 py-2 rounded-xl glass-input text-[#23372B] text-xs placeholder:text-[#556E5F]/60 focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
               />
-              <Search className="w-3.5 h-3.5 text-[#7C5A52] absolute left-2.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-3.5 h-3.5 text-[#556E5F] absolute left-2.5 top-1/2 -translate-y-1/2" />
               {ingredientFilterQuery && (
                 <button
                   onClick={() => setIngredientFilterQuery('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#7C5A52] hover:text-[#3D231D]"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#556E5F] hover:text-[#23372B]"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -374,7 +374,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           {/* Clickable Ingredients Tag List */}
           <div className="flex flex-wrap gap-1.5 max-h-[60vh] overflow-y-auto pr-1 custom-scrollbar">
             {filteredIngredientsList.length === 0 ? (
-              <p className="text-xs text-[#7C5A52] py-4 text-center w-full italic">
+              <p className="text-xs text-[#556E5F] py-4 text-center w-full italic">
                 Ингредиенты не найдены
               </p>
             ) : (
@@ -387,12 +387,12 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     className={`text-xs font-medium px-2.5 py-1.5 rounded-xl border transition-all flex items-center gap-1.5 cursor-pointer ${
                       isActive
                         ? 'glass-button-primary text-white font-bold scale-102 ring-2 ring-white/60 shadow-xs'
-                        : 'glass-pill text-[#3D231D] hover:bg-white/90 border-white/70'
+                        : 'glass-pill text-[#23372B] hover:bg-white/90 border-[#DAE8DF]'
                     }`}
                   >
                     <span>{ingObj.name}</span>
                     <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                      isActive ? 'bg-white/30 text-white' : 'bg-[#E87A90]/20 text-[#E87A90]'
+                      isActive ? 'bg-white/30 text-white' : 'bg-[#E8F1EB] text-[#345741]'
                     }`}>
                       {ingObj.count}
                     </span>
@@ -411,13 +411,13 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           
           {/* Top Search Bar */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#3D231D] font-serif flex items-center justify-between">
+            <label className="text-xs font-bold text-[#23372B] font-serif flex items-center justify-between">
               <span className="flex items-center gap-1.5">
-                <Search className="w-3.5 h-3.5 text-[#E87A90]" />
+                <Search className="w-3.5 h-3.5 text-[#5E8A6E]" />
                 Двусторонний поиск
               </span>
-              <span className="text-[10px] text-[#7C5A52] glass-pill px-2.5 py-0.5 rounded-full">
-                найдено: <strong className="text-[#3D231D]">{totalResults}</strong>
+              <span className="text-[10px] text-[#556E5F] glass-pill px-2.5 py-0.5 rounded-full">
+                найдено: <strong className="text-[#23372B]">{totalResults}</strong>
               </span>
             </label>
 
@@ -427,13 +427,13 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 value={filters.searchQuery}
                 onChange={(e) => onFilterChange({ searchQuery: e.target.value })}
                 placeholder="Поиск ингредиента..."
-                className="w-full pl-8 pr-8 py-2.5 rounded-xl glass-input text-[#3D231D] placeholder:text-[#7C5A52]/60 text-xs focus:outline-none focus:ring-2 focus:ring-[#E87A90]/50"
+                className="w-full pl-8 pr-8 py-2.5 rounded-xl glass-input text-[#23372B] placeholder:text-[#556E5F]/60 text-xs focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
               />
-              <Search className="w-3.5 h-3.5 text-[#7C5A52] absolute left-2.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-3.5 h-3.5 text-[#556E5F] absolute left-2.5 top-1/2 -translate-y-1/2" />
               {filters.searchQuery && (
                 <button
                   onClick={() => onFilterChange({ searchQuery: '' })}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#7C5A52] hover:text-[#3D231D]"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#556E5F] hover:text-[#23372B]"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -443,8 +443,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
 
           {/* Type Filter Segment */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#3D231D] flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-[#E87A90]" />
+            <label className="text-xs font-bold text-[#23372B] flex items-center gap-1">
+              <Sparkles className="w-3.5 h-3.5 text-[#5E8A6E]" />
               Тип сочетания
             </label>
             <div className="grid grid-cols-3 gap-1 glass-pill p-1 rounded-xl text-xs font-medium">
@@ -452,8 +452,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ typeFilter: 'all' })}
                 className={`py-1.5 rounded-lg transition-all cursor-pointer ${
                   filters.typeFilter === 'all'
-                    ? 'bg-[#E87A90] text-white shadow-xs font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#5E8A6E] text-white shadow-xs font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 Все
@@ -462,8 +462,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ typeFilter: 'classic' })}
                 className={`py-1.5 rounded-lg transition-all cursor-pointer ${
                   filters.typeFilter === 'classic'
-                    ? 'bg-emerald-700 text-white shadow-xs font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#345741] text-white shadow-xs font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 Классика
@@ -472,8 +472,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ typeFilter: 'exotic' })}
                 className={`py-1.5 rounded-lg transition-all cursor-pointer ${
                   filters.typeFilter === 'exotic'
-                    ? 'bg-purple-700 text-white shadow-xs font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#934F22] text-white shadow-xs font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 Экзотика
@@ -484,14 +484,14 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           {/* Intensity Range Control */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-bold text-[#3D231D] flex items-center gap-1">
-                <Flame className="w-3.5 h-3.5 text-amber-600" />
-                Интенсивность: <span className="text-[#E87A90] font-bold">{filters.minIntensity}–{filters.maxIntensity}</span>
+              <label className="text-xs font-bold text-[#23372B] flex items-center gap-1">
+                <Flame className="w-3.5 h-3.5 text-[#E28751]" />
+                Интенсивность: <span className="text-[#E28751] font-bold">{filters.minIntensity}–{filters.maxIntensity}</span>
               </label>
               {onOpenGlossary && (
                 <button
                   onClick={onOpenGlossary}
-                  className="text-[10px] text-[#E87A90] hover:underline flex items-center gap-0.5"
+                  className="text-[10px] text-[#5E8A6E] hover:underline flex items-center gap-0.5"
                 >
                   <HelpCircle className="w-3 h-3" />
                   Шкалы
@@ -499,13 +499,13 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
               )}
             </div>
 
-            <div className="grid grid-cols-4 gap-1 bg-[#FFF8F5] p-1 rounded-xl border border-[#F4A3B4]/30 text-[10px] font-medium">
+            <div className="grid grid-cols-4 gap-1 bg-[#FAF7F2] p-1 rounded-xl border border-[#DAE8DF] text-[10px] font-medium">
               <button
                 onClick={() => onFilterChange({ minIntensity: 1, maxIntensity: 5 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minIntensity === 1 && filters.maxIntensity === 5
-                    ? 'bg-amber-600 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#E28751] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 1–5
@@ -514,8 +514,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ minIntensity: 1, maxIntensity: 2 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minIntensity === 1 && filters.maxIntensity === 2
-                    ? 'bg-amber-600 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#E28751] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 1–2
@@ -524,8 +524,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ minIntensity: 3, maxIntensity: 3 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minIntensity === 3 && filters.maxIntensity === 3
-                    ? 'bg-amber-600 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#E28751] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 3
@@ -534,8 +534,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ minIntensity: 4, maxIntensity: 5 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minIntensity === 4 && filters.maxIntensity === 5
-                    ? 'bg-amber-600 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#E28751] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 4–5
@@ -543,7 +543,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
             </div>
 
             <div className="flex items-center gap-2 pt-0.5">
-              <span className="text-[10px] text-[#7C5A52]">Мин:</span>
+              <span className="text-[10px] text-[#556E5F]">Мин:</span>
               <input
                 type="range"
                 min="1"
@@ -557,9 +557,9 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     maxIntensity: Math.max(val, filters.maxIntensity),
                   });
                 }}
-                className="w-1/2 accent-amber-600 cursor-pointer"
+                className="w-1/2 accent-[#E28751] cursor-pointer"
               />
-              <span className="text-[10px] text-[#7C5A52]">Макс:</span>
+              <span className="text-[10px] text-[#556E5F]">Макс:</span>
               <input
                 type="range"
                 min="1"
@@ -573,7 +573,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     minIntensity: Math.min(val, filters.minIntensity),
                   });
                 }}
-                className="w-1/2 accent-amber-600 cursor-pointer"
+                className="w-1/2 accent-[#E28751] cursor-pointer"
               />
             </div>
           </div>
@@ -581,14 +581,14 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           {/* Exotics Range Control */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-bold text-[#3D231D] flex items-center gap-1">
-                <Compass className="w-3.5 h-3.5 text-purple-600" />
-                Экзотика: <span className="text-[#E87A90] font-bold">{filters.minRisk}–{filters.maxRisk}</span>
+              <label className="text-xs font-bold text-[#23372B] flex items-center gap-1">
+                <Compass className="w-3.5 h-3.5 text-[#D96B84]" />
+                Экзотика: <span className="text-[#D96B84] font-bold">{filters.minRisk}–{filters.maxRisk}</span>
               </label>
               {onOpenGlossary && (
                 <button
                   onClick={onOpenGlossary}
-                  className="text-[10px] text-[#E87A90] hover:underline flex items-center gap-0.5"
+                  className="text-[10px] text-[#5E8A6E] hover:underline flex items-center gap-0.5"
                 >
                   <HelpCircle className="w-3 h-3" />
                   Шкалы
@@ -596,13 +596,13 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
               )}
             </div>
 
-            <div className="grid grid-cols-4 gap-1 bg-[#FFF8F5] p-1 rounded-xl border border-[#F4A3B4]/30 text-[10px] font-medium">
+            <div className="grid grid-cols-4 gap-1 bg-[#FAF7F2] p-1 rounded-xl border border-[#DAE8DF] text-[10px] font-medium">
               <button
                 onClick={() => onFilterChange({ minRisk: 1, maxRisk: 5 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minRisk === 1 && filters.maxRisk === 5
-                    ? 'bg-purple-700 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#D96B84] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 1–5
@@ -611,8 +611,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ minRisk: 1, maxRisk: 2 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minRisk === 1 && filters.maxRisk === 2
-                    ? 'bg-purple-700 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#D96B84] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 1–2
@@ -621,8 +621,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ minRisk: 3, maxRisk: 3 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minRisk === 3 && filters.maxRisk === 3
-                    ? 'bg-purple-700 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#D96B84] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 3
@@ -631,8 +631,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                 onClick={() => onFilterChange({ minRisk: 4, maxRisk: 5 })}
                 className={`py-1 rounded-md transition-all cursor-pointer ${
                   filters.minRisk === 4 && filters.maxRisk === 5
-                    ? 'bg-purple-700 text-white font-bold'
-                    : 'text-[#7C5A52] hover:text-[#3D231D]'
+                    ? 'bg-[#D96B84] text-white font-bold'
+                    : 'text-[#556E5F] hover:text-[#23372B]'
                 }`}
               >
                 4–5
@@ -640,7 +640,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
             </div>
 
             <div className="flex items-center gap-2 pt-0.5">
-              <span className="text-[10px] text-[#7C5A52]">Мин:</span>
+              <span className="text-[10px] text-[#556E5F]">Мин:</span>
               <input
                 type="range"
                 min="1"
@@ -654,9 +654,9 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     maxRisk: Math.max(val, filters.maxRisk),
                   });
                 }}
-                className="w-1/2 accent-purple-600 cursor-pointer"
+                className="w-1/2 accent-[#D96B84] cursor-pointer"
               />
-              <span className="text-[10px] text-[#7C5A52]">Макс:</span>
+              <span className="text-[10px] text-[#556E5F]">Макс:</span>
               <input
                 type="range"
                 min="1"
@@ -670,7 +670,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     minRisk: Math.min(val, filters.minRisk),
                   });
                 }}
-                className="w-1/2 accent-purple-600 cursor-pointer"
+                className="w-1/2 accent-[#D96B84] cursor-pointer"
               />
             </div>
           </div>
@@ -679,7 +679,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
           {onResetFilters && (
             <button
               onClick={onResetFilters}
-              className="w-full py-2 rounded-xl text-xs text-[#E87A90] hover:bg-[#E87A90]/10 border border-[#E87A90]/30 font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+              className="w-full py-2 rounded-xl text-xs text-[#5E8A6E] hover:bg-[#E8F1EB] border border-[#B6CEBE] font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               Сбросить все фильтры

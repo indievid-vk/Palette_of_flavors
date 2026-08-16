@@ -55,21 +55,21 @@ export const TeamCreditsModal: React.FC<TeamCreditsModalProps> = ({ isOpen, onCl
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full glass-button text-[#2C1E1C] hover:bg-white transition-colors cursor-pointer z-10"
+          className="absolute top-5 right-5 p-2 rounded-full glass-button text-[#23372B] hover:bg-white transition-colors cursor-pointer z-10"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-[#4A2E2B] text-white flex items-center justify-center shadow-md">
-            <Sparkles className="w-6 h-6 text-[#E29578]" />
+          <div className="w-12 h-12 rounded-2xl bg-[#5E8A6E] text-white flex items-center justify-center shadow-md">
+            <Sparkles className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-[#2C1E1C] font-serif">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#23372B] font-serif">
               О команде «Индивид СтудИИя»
             </h2>
-            <p className="text-xs text-[#6B5A57]">
+            <p className="text-xs text-[#556E5F]">
               Автономный ИИ-конвейер полного цикла разработки цифровых продуктов
             </p>
           </div>
@@ -82,13 +82,13 @@ export const TeamCreditsModal: React.FC<TeamCreditsModalProps> = ({ isOpen, onCl
             return (
               <div key={i} className={`p-3.5 rounded-2xl border ${r.color} flex items-start gap-3 text-xs`}>
                 <div className="p-2 rounded-xl bg-white shadow-xs shrink-0 mt-0.5">
-                  <Icon className="w-4 h-4 text-[#4A2E2B]" />
+                  <Icon className="w-4 h-4 text-[#5E8A6E]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#2C1E1C] font-serif text-sm mb-0.5">
+                  <h4 className="font-bold text-[#23372B] font-serif text-sm mb-0.5">
                     {r.title}
                   </h4>
-                  <p className="text-[#6B5A57] leading-relaxed">
+                  <p className="text-[#556E5F] leading-relaxed">
                     {r.desc}
                   </p>
                 </div>
@@ -98,18 +98,18 @@ export const TeamCreditsModal: React.FC<TeamCreditsModalProps> = ({ isOpen, onCl
         </div>
 
         {/* Safety Protocol Note */}
-        <div className="p-3.5 rounded-2xl bg-[#4A2E2B]/5 border border-[#4A2E2B]/15 text-xs text-[#6B5A57] space-y-1">
-          <span className="font-bold text-[#4A2E2B] block">🔒 Протокол безопасности и эталон качества:</span>
+        <div className="p-3.5 rounded-2xl bg-[#E8F1EB] border border-[#B6CEBE] text-xs text-[#345741] space-y-1">
+          <span className="font-bold text-[#23372B] block">🔒 Протокол безопасности и эталон качества:</span>
           <p className="text-[11px] leading-relaxed">
             Все изменения посимвольно сверяются с эталоном проекта. Бесперебойная работа офлайн-поиска, Dexie IndexedDB и Service Worker подтверждена тестированием [AI QA Engineer].
           </p>
         </div>
 
         {/* Footer */}
-        <div className="pt-4 border-t border-[#4A2E2B]/10 mt-6 flex justify-end">
+        <div className="pt-4 border-t border-[#DAE8DF] mt-6 flex justify-end">
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-xl bg-[#4A2E2B] text-white font-semibold text-xs hover:bg-[#3A2422] transition-colors"
+            className="px-6 py-2.5 rounded-xl glass-button text-[#23372B] font-semibold text-xs hover:bg-white transition-colors cursor-pointer"
           >
             Закрыть
           </button>

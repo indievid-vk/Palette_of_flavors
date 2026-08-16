@@ -205,11 +205,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8F5] text-[#3D231D] flex flex-col font-sans relative overflow-x-hidden bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#FFE4E8]/60 via-[#FFF8F5] to-[#FCE4EC]/50">
+    <div className="min-h-screen bg-[#FAF7F2] text-[#23372B] flex flex-col font-sans relative overflow-x-hidden bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#E8F1EB]/70 via-[#FAF7F2] to-[#FDF3E8]/60">
       
       {/* Lightweight Ambient Accent Spotlights (GPU friendly, no heavy blur calculation) */}
-      <div className="fixed top-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-[#FF9EAF]/15 pointer-events-none -z-10 blur-xl" />
-      <div className="fixed bottom-[-10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-[#A7F3D0]/12 pointer-events-none -z-10 blur-xl" />
+      <div className="fixed top-[-10%] left-[-10%] w-[420px] h-[420px] rounded-full bg-[#8EA895]/15 pointer-events-none -z-10 blur-xl" />
+      <div className="fixed bottom-[-10%] right-[-10%] w-[450px] h-[450px] rounded-full bg-[#F5A66B]/12 pointer-events-none -z-10 blur-xl" />
       
       {/* Top Header */}
       <Header
@@ -265,15 +265,15 @@ export default function App() {
             <div id="results-section" className="space-y-4">
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-bold text-[#3D231D] font-serif flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-[#23372B] font-serif flex items-center gap-2">
                     Карточки вкусов
-                    <span className="text-xs font-sans font-medium text-[#7C5A52] glass-pill px-3 py-0.5 rounded-full">
+                    <span className="text-xs font-sans font-medium text-[#556E5F] glass-pill px-3 py-0.5 rounded-full">
                       {filteredCombinations.length} найдено
                     </span>
                   </h3>
 
                   {selectedCategory !== 'all' && (
-                    <span className="text-xs font-semibold text-[#E87A90] glass-pill px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold text-[#5E8A6E] glass-pill px-3 py-1 rounded-full border border-[#B6CEBE]/60">
                       Категория: {CATEGORIES.find((c) => c.id === selectedCategory)?.name}
                     </span>
                   )}
@@ -286,7 +286,7 @@ export default function App() {
                     className={`px-3 py-1.5 rounded-xl text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
                       viewMode === 'grid'
                         ? 'glass-button-primary text-white font-bold'
-                        : 'text-[#7C5A52] hover:text-[#3D231D]'
+                        : 'text-[#556E5F] hover:text-[#23372B]'
                     }`}
                   >
                     <LayoutGrid className="w-3.5 h-3.5" />
@@ -298,7 +298,7 @@ export default function App() {
                     className={`px-3 py-1.5 rounded-xl text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
                       viewMode === 'table'
                         ? 'glass-button-primary text-white font-bold'
-                        : 'text-[#7C5A52] hover:text-[#3D231D]'
+                        : 'text-[#556E5F] hover:text-[#23372B]'
                     }`}
                   >
                     <Table className="w-3.5 h-3.5" />
@@ -308,16 +308,16 @@ export default function App() {
               </div>
 
               {filteredCombinations.length === 0 ? (
-                <div className="bg-white rounded-3xl p-12 text-center border border-[#F4A3B4]/30 space-y-4 shadow-xs">
-                  <div className="w-16 h-16 rounded-full bg-[#FFF8F5] text-[#7C5A52] flex items-center justify-center mx-auto border border-[#F4A3B4]/30">
-                    <Utensils className="w-8 h-8 text-[#E87A90]/60" />
+                <div className="bg-white rounded-3xl p-12 text-center border border-[#DAE8DF] space-y-4 shadow-xs">
+                  <div className="w-16 h-16 rounded-full bg-[#FAF7F2] text-[#556E5F] flex items-center justify-center mx-auto border border-[#B6CEBE]/40">
+                    <Utensils className="w-8 h-8 text-[#5E8A6E]/70" />
                   </div>
 
                   <div>
-                    <h4 className="text-base font-bold text-[#3D231D] font-serif">
+                    <h4 className="text-base font-bold text-[#23372B] font-serif">
                       Сочетаний по выбранным фильтрам не найдено
                     </h4>
-                    <p className="text-xs text-[#7C5A52] max-w-md mx-auto mt-1">
+                    <p className="text-xs text-[#556E5F] max-w-md mx-auto mt-1">
                       Попробуйте расширить диапазоны Интенсивности и Риска, либо сбросьте поиск ингредиентов.
                     </p>
                   </div>
@@ -325,7 +325,7 @@ export default function App() {
                   <div className="flex items-center justify-center gap-3 pt-2">
                     <button
                       onClick={handleResetFilters}
-                      className="px-4 py-2.5 rounded-2xl bg-[#E87A90] text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-[#d6697f] transition-colors shadow-xs"
+                      className="px-4 py-2.5 rounded-2xl bg-[#5E8A6E] text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-[#4d735b] transition-colors shadow-xs"
                     >
                       <RotateCcw className="w-3.5 h-3.5" />
                       <span>Сбросить фильтры</span>
@@ -333,7 +333,7 @@ export default function App() {
 
                     <button
                       onClick={() => setIsAddModalOpen(true)}
-                      className="px-4 py-2.5 rounded-2xl bg-emerald-700 text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-emerald-800 transition-colors shadow-xs"
+                      className="px-4 py-2.5 rounded-2xl bg-[#E28751] text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-[#cf7743] transition-colors shadow-xs"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>Добавить свою пару</span>
@@ -360,8 +360,8 @@ export default function App() {
                 /* High-density Compact Table View */
                 <div className="glass-card rounded-3xl overflow-hidden">
                   <div className="overflow-x-auto">
-                    <table className="w-full text-left text-xs text-[#3D231D]">
-                      <thead className="glass-pill border-b border-white/60 font-serif font-bold text-[#3D231D]">
+                    <table className="w-full text-left text-xs text-[#23372B]">
+                      <thead className="glass-pill border-b border-white/60 font-serif font-bold text-[#23372B]">
                         <tr>
                           <th className="p-3.5">Вкусовая пара</th>
                           <th className="p-3.5">Тип</th>
@@ -371,14 +371,14 @@ export default function App() {
                           <th className="p-3.5 text-right">Действия</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-[#F4A3B4]/20">
+                      <tbody className="divide-y divide-[#DAE8DF]/60">
                         {filteredCombinations.map((item) => {
                           const isFav = favoriteIds.has(item.id);
                           return (
-                            <tr key={item.id} className="hover:bg-[#FFF8F5]/80 transition-colors">
-                              <td className="p-3.5 font-bold font-serif text-sm text-[#3D231D]">
+                            <tr key={item.id} className="hover:bg-[#EBF3ED]/50 transition-colors">
+                              <td className="p-3.5 font-bold font-serif text-sm text-[#23372B]">
                                 {item.primary_name} + {item.secondary_name}
-                                <span className="block text-[11px] font-sans font-normal text-[#7C5A52] line-clamp-1 mt-0.5">
+                                <span className="block text-[11px] font-sans font-normal text-[#556E5F] line-clamp-1 mt-0.5">
                                   {item.description}
                                 </span>
                               </td>
@@ -386,8 +386,8 @@ export default function App() {
                               <td className="p-3.5">
                                 <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
                                   item.type === 'classic'
-                                    ? 'bg-emerald-100 text-emerald-800'
-                                    : 'bg-purple-100 text-purple-800'
+                                    ? 'bg-[#EBF3ED] text-[#345741] border border-[#B6CEBE]/50'
+                                    : 'bg-[#FDF3E8] text-[#934F22] border border-[#F8CCA6]/60'
                                 }`}>
                                   {item.type === 'classic' ? 'Классика' : 'Экзотика'}
                                 </span>
@@ -399,7 +399,7 @@ export default function App() {
                                     <button
                                       key={idx}
                                       onClick={() => handleFilterChange({ applicationTag: tag })}
-                                      className="text-[10px] px-2 py-0.5 rounded-md bg-[#FFF8F5] border border-[#F4A3B4]/30 text-[#7C5A52] hover:bg-white"
+                                      className="text-[10px] px-2 py-0.5 rounded-md bg-[#FAF7F2] border border-[#DAE8DF] text-[#556E5F] hover:bg-white"
                                     >
                                       #{tag}
                                     </button>
@@ -408,15 +408,15 @@ export default function App() {
                               </td>
 
                               <td className="p-3.5 text-center font-bold">
-                                <div className="flex items-center justify-center gap-1 text-amber-900">
-                                  <Flame className="w-3.5 h-3.5 text-amber-600" />
+                                <div className="flex items-center justify-center gap-1 text-[#E28751]">
+                                  <Flame className="w-3.5 h-3.5 text-[#E28751]" />
                                   <span>{item.intensity}/5</span>
                                 </div>
                               </td>
 
                               <td className="p-3.5 text-center font-bold">
-                                <div className="flex items-center justify-center gap-1 text-rose-900">
-                                  <ShieldAlert className="w-3.5 h-3.5 text-rose-600" />
+                                <div className="flex items-center justify-center gap-1 text-[#D96B84]">
+                                  <ShieldAlert className="w-3.5 h-3.5 text-[#D96B84]" />
                                   <span>{item.risk}/5</span>
                                 </div>
                               </td>
@@ -427,26 +427,26 @@ export default function App() {
                                     onClick={() => handleToggleFavorite(item)}
                                     className={`p-1.5 rounded-lg border transition-all ${
                                       isFav
-                                        ? 'bg-[#E87A90]/15 text-[#E87A90] border-[#E87A90]/30'
-                                        : 'bg-[#FFF8F5] text-[#7C5A52] border-[#F4A3B4]/30 hover:bg-white'
+                                        ? 'bg-[#E0657F]/15 text-[#E0657F] border-[#E0657F]/30'
+                                        : 'bg-[#FAF7F2] text-[#556E5F] border-[#DAE8DF] hover:bg-white'
                                     }`}
                                     title="В избранное"
                                   >
-                                    <Heart className={`w-3.5 h-3.5 ${isFav ? 'fill-[#E87A90] text-[#E87A90]' : ''}`} />
+                                    <Heart className={`w-3.5 h-3.5 ${isFav ? 'fill-[#E0657F] text-[#E0657F]' : ''}`} />
                                   </button>
 
                                   <button
                                     onClick={() => handleOpenChefCalculator(item)}
-                                    className="px-2 py-1 rounded-lg bg-[#FFF8F5] border border-[#F4A3B4]/40 text-[#4A2E2B] text-[11px] font-semibold flex items-center gap-1 hover:bg-white transition-colors"
+                                    className="px-2 py-1 rounded-lg bg-[#FAF7F2] border border-[#DAE8DF] text-[#23372B] text-[11px] font-semibold flex items-center gap-1 hover:bg-white transition-colors"
                                     title="Калькулятор слоев и техкарта"
                                   >
-                                    <Scale className="w-3 h-3 text-[#E29578]" />
+                                    <Scale className="w-3 h-3 text-[#E28751]" />
                                     <span>Техкарта</span>
                                   </button>
 
                                   <button
                                     onClick={() => handleOpenAiForPairing(item)}
-                                    className="px-2.5 py-1 rounded-lg bg-[#E87A90] text-white text-[11px] font-semibold flex items-center gap-1 hover:bg-[#d6697f] transition-colors"
+                                    className="px-2.5 py-1 rounded-lg bg-[#5E8A6E] text-white text-[11px] font-semibold flex items-center gap-1 hover:bg-[#4d735b] transition-colors"
                                   >
                                     <Sparkle className="w-3 h-3 text-white" />
                                     <span>AI Трио</span>
@@ -470,13 +470,13 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-[#4A2E2B]/10 py-6 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6B5A57]">
+      <footer className="bg-white border-t border-[#DAE8DF] py-6 mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#556E5F]">
           <div>
-            <p className="font-semibold text-[#2C1E1C]">
+            <p className="font-semibold text-[#23372B]">
               PWA «Палитра вкусов» &bull; Версия 1.0.0-MVP
             </p>
-            <p className="text-[11px] text-[#6B5A57]">
+            <p className="text-[11px] text-[#556E5F]">
               Разработчик: Нейрокоманда «Индивид СтудИИя» (в рабочей среде Google AI Studio)
             </p>
           </div>
@@ -484,19 +484,19 @@ export default function App() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsAboutOpen(true)}
-              className="hover:underline hover:text-[#4A2E2B]"
+              className="hover:underline hover:text-[#23372B]"
             >
               О приложении
             </button>
             <button
               onClick={() => setIsGlossaryOpen(true)}
-              className="hover:underline hover:text-[#4A2E2B]"
+              className="hover:underline hover:text-[#23372B]"
             >
               Справочник шкал
             </button>
             <button
               onClick={() => setIsTeamCreditsOpen(true)}
-              className="hover:underline hover:text-[#4A2E2B]"
+              className="hover:underline hover:text-[#23372B]"
             >
               О команде разработки
             </button>

@@ -62,7 +62,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
             </span>
 
             {/* Category tags */}
-            <span className="text-[10px] text-[#7C5A52] glass-pill px-2.5 py-0.5 rounded-full font-medium">
+            <span className="text-[10px] text-[#556E5F] glass-pill px-2.5 py-0.5 rounded-full font-medium">
               {primaryCategoryObj?.name} &bull; {secondaryCategoryObj?.name}
             </span>
           </div>
@@ -73,17 +73,17 @@ export const ResultCard: React.FC<ResultCardProps> = ({
               onClick={() => onToggleFavorite(item)}
               className={`p-1.5 rounded-xl border transition-all glass-pill ${
                 isFavorite
-                  ? 'bg-[#FF4D6D]/15 text-[#FF4D6D] border-[#FF4D6D]/40'
-                  : 'text-[#7C5A52] hover:bg-white/90'
+                  ? 'bg-[#E0657F]/15 text-[#E0657F] border-[#E0657F]/40'
+                  : 'text-[#556E5F] hover:bg-white/90'
               }`}
               title={isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
             >
-              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-[#FF4D6D] text-[#FF4D6D]' : ''}`} />
+              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-[#E0657F] text-[#E0657F]' : ''}`} />
             </button>
 
             <button
               onClick={handleCopy}
-              className="p-1.5 rounded-xl glass-pill text-[#7C5A52] hover:text-[#3D231D] transition-all"
+              className="p-1.5 rounded-xl glass-pill text-[#556E5F] hover:text-[#23372B] transition-all"
               title="Скопировать карточку"
             >
               {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
@@ -92,11 +92,11 @@ export const ResultCard: React.FC<ResultCardProps> = ({
         </div>
 
         {/* Dynamic Title with Clickable Ingredients */}
-        <h3 className="text-lg sm:text-xl font-bold text-[#3D231D] font-serif mb-2 leading-snug">
+        <h3 className="text-lg sm:text-xl font-bold text-[#23372B] font-serif mb-2 leading-snug">
           {onSelectIngredient ? (
             <button
               onClick={() => onSelectIngredient(firstIng)}
-              className="hover:text-[#E87A90] transition-colors hover:underline text-left"
+              className="hover:text-[#5E8A6E] transition-colors hover:underline text-left"
               title={`Фильтровать сочетания с "${firstIng}"`}
             >
               {firstIng}
@@ -104,11 +104,11 @@ export const ResultCard: React.FC<ResultCardProps> = ({
           ) : (
             <span>{firstIng}</span>
           )}
-          <span className="text-[#E87A90] mx-1.5">+</span>
+          <span className="text-[#E28751] mx-1.5">+</span>
           {onSelectIngredient ? (
             <button
               onClick={() => onSelectIngredient(secondIng)}
-              className="hover:text-[#E87A90] transition-colors hover:underline text-left"
+              className="hover:text-[#5E8A6E] transition-colors hover:underline text-left"
               title={`Фильтровать сочетания с "${secondIng}"`}
             >
               {secondIng}
@@ -117,14 +117,14 @@ export const ResultCard: React.FC<ResultCardProps> = ({
             <span>{secondIng}</span>
           )}
           {isSecondaryMatched && (
-            <span className="text-[10px] font-sans font-normal text-[#E87A90] ml-2 block sm:inline">
+            <span className="text-[10px] font-sans font-normal text-[#5E8A6E] ml-2 block sm:inline">
               (авто-поворот поиска)
             </span>
           )}
         </h3>
 
         {/* Description */}
-        <p className="text-xs text-[#7C5A52] leading-relaxed mb-4">
+        <p className="text-xs text-[#556E5F] leading-relaxed mb-4">
           {item.description}
         </p>
 
@@ -150,16 +150,16 @@ export const ResultCard: React.FC<ResultCardProps> = ({
           
           {/* Intensity Bar */}
           <div>
-            <div className="flex items-center justify-between text-[11px] font-semibold text-[#3D231D] mb-1">
+            <div className="flex items-center justify-between text-[11px] font-semibold text-[#23372B] mb-1">
               <span>Интенсивность</span>
-              <span className="text-[#E87A90] font-bold">{item.intensity}/5</span>
+              <span className="text-[#E28751] font-bold">{item.intensity}/5</span>
             </div>
-            <div className="w-full bg-[#E87A90]/15 rounded-full h-2 overflow-hidden flex gap-0.5 p-0.5 shadow-2xs">
+            <div className="w-full bg-[#E28751]/15 rounded-full h-2 overflow-hidden flex gap-0.5 p-0.5 shadow-2xs">
               {[1, 2, 3, 4, 5].map((lvl) => (
                 <div
                   key={lvl}
                   className={`h-full flex-1 rounded-sm transition-all ${
-                    lvl <= item.intensity ? 'bg-amber-500' : 'bg-transparent'
+                    lvl <= item.intensity ? 'bg-[#E28751]' : 'bg-transparent'
                   }`}
                 />
               ))}
@@ -168,16 +168,16 @@ export const ResultCard: React.FC<ResultCardProps> = ({
 
           {/* Exotics Bar */}
           <div>
-            <div className="flex items-center justify-between text-[11px] font-semibold text-[#3D231D] mb-1">
+            <div className="flex items-center justify-between text-[11px] font-semibold text-[#23372B] mb-1">
               <span>Экзотика</span>
-              <span className="text-purple-700 font-bold">{item.risk}/5</span>
+              <span className="text-[#D96B84] font-bold">{item.risk}/5</span>
             </div>
-            <div className="w-full bg-purple-500/15 rounded-full h-2 overflow-hidden flex gap-0.5 p-0.5 shadow-2xs">
+            <div className="w-full bg-[#D96B84]/15 rounded-full h-2 overflow-hidden flex gap-0.5 p-0.5 shadow-2xs">
               {[1, 2, 3, 4, 5].map((lvl) => (
                 <div
                   key={lvl}
                   className={`h-full flex-1 rounded-sm transition-all ${
-                    lvl <= item.risk ? 'bg-purple-600' : 'bg-transparent'
+                    lvl <= item.risk ? 'bg-[#D96B84]' : 'bg-transparent'
                   }`}
                 />
               ))}
@@ -192,12 +192,12 @@ export const ResultCard: React.FC<ResultCardProps> = ({
         
         {/* Tags */}
         <div className="flex items-center gap-1.5 flex-wrap">
-          <Tag className="w-3.5 h-3.5 text-[#7C5A52]" />
+          <Tag className="w-3.5 h-3.5 text-[#556E5F]" />
           {item.applications.map((app) => (
             <button
               key={app}
               onClick={() => onSelectTag(app)}
-              className="text-[11px] font-medium text-[#3D231D] glass-pill hover:bg-white px-2.5 py-0.5 rounded-full transition-colors"
+              className="text-[11px] font-medium text-[#23372B] glass-pill hover:bg-white px-2.5 py-0.5 rounded-full transition-colors"
             >
               #{app}
             </button>
@@ -209,9 +209,9 @@ export const ResultCard: React.FC<ResultCardProps> = ({
           {onOpenChefCalculator && (
             <button
               onClick={() => onOpenChefCalculator(item)}
-              className="w-full py-2.5 px-2.5 rounded-xl glass-button text-[#4A2E2B] text-xs font-semibold flex items-center justify-center gap-1.5 transition-all active:scale-98"
+              className="w-full py-2.5 px-2.5 rounded-xl glass-button text-[#23372B] text-xs font-semibold flex items-center justify-center gap-1.5 transition-all active:scale-98"
             >
-              <Scale className="w-3.5 h-3.5 text-[#E29578]" />
+              <Scale className="w-3.5 h-3.5 text-[#E28751]" />
               <span>Калькулятор & Техкарта</span>
             </button>
           )}

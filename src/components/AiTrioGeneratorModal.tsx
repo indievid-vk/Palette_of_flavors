@@ -156,7 +156,7 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full glass-button text-[#2C1E1C] hover:bg-white transition-colors cursor-pointer z-10"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full glass-button text-[#23372B] hover:bg-white transition-colors cursor-pointer z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -164,20 +164,20 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
         {/* Header */}
         <div className="mb-5 pr-8">
           <div className="min-w-0">
-            <h2 className="text-lg sm:text-2xl font-bold text-[#2C1E1C] font-serif truncate flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#FF758F]" />
+            <h2 className="text-lg sm:text-2xl font-bold text-[#23372B] font-serif truncate flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-[#E0657F]" />
               AI Генератор Трио-Вкусов
             </h2>
-            <p className="text-[11px] sm:text-xs text-[#6B5A57] truncate">
+            <p className="text-[11px] sm:text-xs text-[#556E5F] truncate">
               Модель Gemini Pro &bull; 3-слойные рецептуры и Техкарта
             </p>
           </div>
         </div>
 
         {/* Generator Controls */}
-        <div className="glass-card p-3.5 sm:p-5 rounded-2xl space-y-3.5 mb-5">
+        <div className="glass-card p-3.5 sm:p-5 rounded-2xl space-y-3.5 mb-5 border border-[#DAE8DF]">
           <div>
-            <label className="text-xs font-semibold text-[#2C1E1C] block mb-1">
+            <label className="text-xs font-semibold text-[#23372B] block mb-1">
               Базовый ключевой ингредиент
             </label>
             <input
@@ -185,12 +185,12 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
               value={baseIngredient}
               onChange={(e) => setBaseIngredient(e.target.value)}
               placeholder="Например: Малина, Темный шоколад, Лаванда, Матча"
-              className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs sm:text-sm text-[#2C1E1C] focus:outline-none focus:ring-2 focus:ring-[#FF758F]/50"
+              className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs sm:text-sm text-[#23372B] focus:outline-none focus:ring-2 focus:ring-[#5E8A6E]/50"
             />
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-[#2C1E1C] block mb-1">
+            <label className="text-xs font-semibold text-[#23372B] block mb-1">
               Формат / Тип изделия
             </label>
             <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
@@ -202,7 +202,7 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
                   className={`text-xs px-3 py-1.5 rounded-xl border transition-all cursor-pointer ${
                     dessertType === type
                       ? 'glass-button-primary text-white font-semibold'
-                      : 'glass-pill text-[#6B5A57] hover:text-[#2C1E1C]'
+                      : 'glass-pill text-[#556E5F] hover:text-[#23372B]'
                   }`}
                 >
                   {type}
@@ -232,12 +232,12 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
 
         {/* Trio Result Card */}
         {trioResult && (
-          <div className="glass-card rounded-2xl p-3.5 sm:p-5 space-y-4 animate-in fade-in duration-300 min-w-0">
+          <div className="glass-card rounded-2xl p-3.5 sm:p-5 space-y-4 animate-in fade-in duration-300 min-w-0 border border-[#DAE8DF]">
             
             {/* Header: Badge & Actions top, Title bottom */}
-            <div className="border-b border-[#4A2E2B]/10 pb-3 space-y-2">
+            <div className="border-b border-[#DAE8DF] pb-3 space-y-2">
               <div className="flex items-center justify-between gap-2 flex-wrap">
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-[#E29578]/20 text-[#4A2E2B] px-2.5 py-0.5 rounded-md shrink-0">
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-[#E8F1EB] text-[#345741] border border-[#B6CEBE] px-2.5 py-0.5 rounded-md shrink-0">
                   {trioResult.dessertType}
                 </span>
 
@@ -246,8 +246,8 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
                     onClick={() => setShowTechCard(!showTechCard)}
                     className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1 transition-all border cursor-pointer whitespace-nowrap active:scale-95 ${
                       showTechCard
-                        ? 'bg-[#4A2E2B] text-white border-[#4A2E2B] shadow-xs'
-                        : 'bg-[#FDFBF7] text-[#4A2E2B] border-[#4A2E2B]/20 hover:bg-white'
+                        ? 'glass-button-primary text-white border-transparent shadow-xs'
+                        : 'bg-[#FAF7F2] text-[#23372B] border-[#DAE8DF] hover:bg-white'
                     }`}
                     title="Переключить показ техкарты"
                   >
@@ -257,15 +257,15 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
 
                   <button
                     onClick={handleCopy}
-                    className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-[#FDFBF7] hover:bg-white text-[#2C1E1C] border border-[#4A2E2B]/20 transition-all text-xs font-semibold flex items-center gap-1 shrink-0 cursor-pointer whitespace-nowrap shadow-2xs active:scale-95"
+                    className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-white hover:bg-[#FAF7F2] text-[#23372B] border border-[#DAE8DF] transition-all text-xs font-semibold flex items-center gap-1 shrink-0 cursor-pointer whitespace-nowrap shadow-2xs active:scale-95"
                   >
-                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> : <Copy className="w-3.5 h-3.5 text-[#E29578] shrink-0" />}
+                    {copied ? <Check className="w-3.5 h-3.5 text-[#5E8A6E] shrink-0" /> : <Copy className="w-3.5 h-3.5 text-[#5E8A6E] shrink-0" />}
                     <span>{copied ? 'Скопировано!' : 'Копировать'}</span>
                   </button>
                 </div>
               </div>
 
-              <h3 className="text-base sm:text-lg font-bold text-[#2C1E1C] font-serif leading-snug break-words">
+              <h3 className="text-base sm:text-lg font-bold text-[#23372B] font-serif leading-snug break-words">
                 {trioResult.title}
               </h3>
             </div>
@@ -275,34 +275,34 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
               {trioResult.flavors.map((flavor, idx) => (
                 <div
                   key={idx}
-                  className="px-3 py-1.5 rounded-xl bg-[#FDFBF7] border border-[#4A2E2B]/15 text-xs font-bold text-[#4A2E2B] flex items-center gap-1.5"
+                  className="px-3 py-1.5 rounded-xl bg-[#FAF7F2] border border-[#DAE8DF] text-xs font-bold text-[#23372B] flex items-center gap-1.5"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#E29578]" />
+                  <span className="w-2 h-2 rounded-full bg-[#E28751]" />
                   <span>{flavor}</span>
                 </div>
               ))}
             </div>
 
             {/* Concept */}
-            <p className="text-xs text-[#6B5A57] leading-relaxed italic bg-[#FDFBF7] p-3 rounded-xl border border-[#4A2E2B]/10">
+            <p className="text-xs text-[#556E5F] leading-relaxed italic bg-[#FAF7F2] p-3 rounded-xl border border-[#DAE8DF]">
               «{trioResult.concept}»
             </p>
 
             {/* Layers Breakdown */}
             <div className="space-y-2">
-              <h4 className="text-xs font-bold text-[#2C1E1C] font-serif flex items-center gap-1.5">
-                <Layers className="w-4 h-4 text-[#E29578]" />
+              <h4 className="text-xs font-bold text-[#23372B] font-serif flex items-center gap-1.5">
+                <Layers className="w-4 h-4 text-[#5E8A6E]" />
                 Архитектура слоев изделия:
               </h4>
 
               <div className="space-y-2 text-xs">
                 {trioResult.layers.map((layer, i) => (
-                  <div key={i} className="p-3 rounded-xl bg-[#FDFBF7] border border-[#4A2E2B]/10">
-                    <div className="flex items-center justify-between font-semibold text-[#4A2E2B] mb-0.5">
+                  <div key={i} className="p-3 rounded-xl bg-[#FAF7F2] border border-[#DAE8DF]">
+                    <div className="flex items-center justify-between font-semibold text-[#23372B] mb-0.5">
                       <span>{layer.layer}</span>
-                      <span className="text-[11px] text-[#E29578] font-normal">{layer.flavorRole}</span>
+                      <span className="text-[11px] text-[#E28751] font-normal">{layer.flavorRole}</span>
                     </div>
-                    <p className="text-[#6B5A57] text-[11px]">{layer.description}</p>
+                    <p className="text-[#556E5F] text-[11px]">{layer.description}</p>
                   </div>
                 ))}
               </div>
@@ -310,54 +310,54 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
 
             {/* Ratings & Chef Notes */}
             <div className="grid grid-cols-2 gap-3 pt-1">
-              <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs">
-                <span className="font-bold text-amber-900 flex items-center gap-1">
-                  <Flame className="w-3.5 h-3.5 text-amber-600" />
+              <div className="p-2.5 rounded-xl bg-[#FDF3E8] border border-[#F8CCA6] text-xs">
+                <span className="font-bold text-[#7D3C10] flex items-center gap-1">
+                  <Flame className="w-3.5 h-3.5 text-[#E28751]" />
                   Интенсивность: {trioResult.intensity}/5
                 </span>
               </div>
 
-              <div className="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs">
-                <span className="font-bold text-rose-900 flex items-center gap-1">
-                  <ShieldAlert className="w-3.5 h-3.5 text-rose-600" />
+              <div className="p-2.5 rounded-xl bg-[#FDF0F3] border border-[#F5CAD4] text-xs">
+                <span className="font-bold text-[#8A2B42] flex items-center gap-1">
+                  <ShieldAlert className="w-3.5 h-3.5 text-[#E0657F]" />
                   Риск: {trioResult.risk}/5
                 </span>
               </div>
             </div>
 
-            <div className="p-3 rounded-xl bg-[#4A2E2B]/5 border border-[#4A2E2B]/15 text-xs">
-              <span className="font-bold text-[#4A2E2B] flex items-center gap-1.5 mb-1">
-                <ChefHat className="w-4 h-4 text-[#4A2E2B]" />
+            <div className="p-3 rounded-xl bg-[#E8F1EB]/50 border border-[#B6CEBE] text-xs">
+              <span className="font-bold text-[#23372B] flex items-center gap-1.5 mb-1">
+                <ChefHat className="w-4 h-4 text-[#5E8A6E]" />
                 Рекомендация шефа:
               </span>
-              <p className="text-[#6B5A57] text-[11px]">{trioResult.chefNotes}</p>
+              <p className="text-[#556E5F] text-[11px]">{trioResult.chefNotes}</p>
             </div>
 
             {/* INTERACTIVE TECH CARD SECTION */}
             {showTechCard && (
-              <div className="mt-6 pt-5 border-t-2 border-dashed border-[#4A2E2B]/20 space-y-4 animate-in fade-in duration-300">
+              <div className="mt-6 pt-5 border-t-2 border-dashed border-[#DAE8DF] space-y-4 animate-in fade-in duration-300">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="p-1.5 rounded-xl bg-[#4A2E2B] text-amber-400">
+                    <div className="p-1.5 rounded-xl bg-[#5E8A6E] text-white">
                       <Award className="w-4 h-4" />
                     </div>
-                    <h4 className="text-sm font-bold text-[#2C1E1C] font-serif">
+                    <h4 className="text-sm font-bold text-[#23372B] font-serif">
                       Технологическая карта и Калькулятор выходов
                     </h4>
                   </div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-amber-500/15 text-amber-900 border border-amber-500/30">
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#E8F1EB] text-[#345741] border border-[#B6CEBE]">
                     World Pastry Formula
                   </span>
                 </div>
 
                 {/* Batch Weight Slider */}
-                <div className="p-4 rounded-2xl bg-[#FDFBF7] border border-[#4A2E2B]/15 space-y-3">
+                <div className="p-4 rounded-2xl bg-white/90 border border-[#DAE8DF] space-y-3">
                   <div className="flex items-center justify-between">
-                    <label className="text-xs font-bold text-[#2C1E1C] flex items-center gap-1.5 uppercase tracking-wide">
-                      <Scale className="w-4 h-4 text-[#E29578]" />
+                    <label className="text-xs font-bold text-[#23372B] flex items-center gap-1.5 uppercase tracking-wide">
+                      <Scale className="w-4 h-4 text-[#5E8A6E]" />
                       Общий целевой вес партии (г)
                     </label>
-                    <span className="text-sm font-bold text-[#E87A90]">
+                    <span className="text-sm font-bold text-[#5E8A6E]">
                       {targetWeight} г (~{Math.round(targetWeight / 90)} порций по 90г)
                     </span>
                   </div>
@@ -369,12 +369,12 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
                     step="50"
                     value={targetWeight}
                     onChange={(e) => setTargetWeight(Number(e.target.value))}
-                    className="w-full accent-[#4A2E2B] cursor-pointer"
+                    className="w-full accent-[#5E8A6E] cursor-pointer"
                   />
 
                   {/* Weight Presets */}
                   <div className="flex items-center gap-2 pt-1 flex-wrap text-xs">
-                    <span className="text-[#6B5A57] text-[11px]">Быстрый выбор:</span>
+                    <span className="text-[#556E5F] text-[11px]">Быстрый выбор:</span>
                     {[500, 1000, 1500, 2000, 3000].map((w) => (
                       <button
                         key={w}
@@ -382,8 +382,8 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
                         onClick={() => setTargetWeight(w)}
                         className={`px-2.5 py-1 rounded-lg border text-xs font-medium transition-colors cursor-pointer ${
                           targetWeight === w
-                            ? 'bg-[#4A2E2B] text-white border-[#4A2E2B]'
-                            : 'bg-white text-[#2C1E1C] border-[#4A2E2B]/20 hover:border-[#4A2E2B]/50'
+                            ? 'glass-button-primary text-white border-transparent'
+                            : 'bg-[#FAF7F2] text-[#23372B] border-[#DAE8DF] hover:border-[#5E8A6E]'
                         }`}
                       >
                         {w} г ({w === 1000 ? '1 кг' : `${w/1000} кг`})
@@ -396,43 +396,43 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                   
                   {/* Layer 1 */}
-                  <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 space-y-1">
-                    <div className="flex justify-between font-bold text-amber-950">
+                  <div className="p-3.5 rounded-2xl bg-[#E8F1EB]/80 border border-[#B6CEBE] space-y-1">
+                    <div className="flex justify-between font-bold text-[#23372B]">
                       <span>1. Мусс/Глассаж (50%)</span>
                       <span>{weightLayer1} г</span>
                     </div>
-                    <p className="text-[11px] text-[#6B5A57] font-medium">
+                    <p className="text-[11px] text-[#556E5F] font-medium">
                       {trioResult.layers[0]?.flavorRole || trioResult.flavors[0]}
                     </p>
-                    <div className="mt-2 pt-2 border-t border-amber-500/15 text-[10px] text-amber-900 font-mono">
+                    <div className="mt-2 pt-2 border-t border-[#B6CEBE]/50 text-[10px] text-[#345741] font-mono">
                       💧 Желатин 200 Bloom: <strong>{gelatinMousse}г</strong> (+ Вода 1:5 = {gelatinBloomWater}г)
                     </div>
                   </div>
 
                   {/* Layer 2 */}
-                  <div className="p-3.5 rounded-2xl bg-purple-500/10 border border-purple-500/20 space-y-1">
-                    <div className="flex justify-between font-bold text-purple-950">
+                  <div className="p-3.5 rounded-2xl bg-[#FDF3E8]/80 border border-[#F8CCA6] space-y-1">
+                    <div className="flex justify-between font-bold text-[#7D3C10]">
                       <span>2. Начинка/Конфи (25%)</span>
                       <span>{weightLayer2} г</span>
                     </div>
-                    <p className="text-[11px] text-[#6B5A57] font-medium">
+                    <p className="text-[11px] text-[#8B512B] font-medium">
                       {trioResult.layers[1]?.flavorRole || trioResult.flavors[1]}
                     </p>
-                    <div className="mt-2 pt-2 border-t border-purple-500/15 text-[10px] text-purple-900 font-mono">
+                    <div className="mt-2 pt-2 border-t border-[#F8CCA6]/50 text-[10px] text-[#7D3C10] font-mono">
                       🍊 Пектин NH: <strong>{pectinInsert}г</strong> (с сахаром 1:4 = {sugarPectinMix}г)
                     </div>
                   </div>
 
                   {/* Layer 3 */}
-                  <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-1">
-                    <div className="flex justify-between font-bold text-emerald-950">
+                  <div className="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#DAE8DF] space-y-1">
+                    <div className="flex justify-between font-bold text-[#23372B]">
                       <span>3. Бисквит/Крамбл (25%)</span>
                       <span>{weightLayer3} г</span>
                     </div>
-                    <p className="text-[11px] text-[#6B5A57] font-medium">
+                    <p className="text-[11px] text-[#556E5F] font-medium">
                       {trioResult.layers[2]?.flavorRole || trioResult.flavors[2]}
                     </p>
-                    <div className="mt-2 pt-2 border-t border-emerald-500/15 text-[10px] text-emerald-900">
+                    <div className="mt-2 pt-2 border-t border-[#DAE8DF] text-[10px] text-[#556E5F]">
                       🌾 Хрустящая основа / дакуаз
                     </div>
                   </div>
@@ -444,12 +444,12 @@ export const AiTrioGeneratorModal: React.FC<AiTrioGeneratorModalProps> = ({
                   <button
                     type="button"
                     onClick={handleCopyTechCard}
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#FDFBF7] hover:bg-white border border-[#4A2E2B]/20 text-[#2C1E1C] font-semibold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs active:scale-98"
+                    className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-[#FAF7F2] border border-[#DAE8DF] text-[#23372B] font-semibold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs active:scale-98"
                   >
                     {techCardCopied ? (
-                      <Check className="w-4 h-4 text-emerald-600" />
+                      <Check className="w-4 h-4 text-[#5E8A6E]" />
                     ) : (
-                      <FileText className="w-4 h-4 text-[#E29578]" />
+                      <FileText className="w-4 h-4 text-[#E28751]" />
                     )}
                     <span>{techCardCopied ? 'Техкарта скопирована в буфер!' : 'Скопировать полное ТЗ и Техкарту'}</span>
                   </button>

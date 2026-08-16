@@ -84,23 +84,23 @@ export const ChefCalculatorModal: React.FC<ChefCalculatorModalProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full glass-button text-[#2C1E1C] hover:bg-white transition-colors cursor-pointer z-10"
+          className="absolute top-5 right-5 p-2 rounded-full glass-button text-[#23372B] hover:bg-white transition-colors cursor-pointer z-10"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Header */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4A2E2B] to-[#2C1E1C] text-amber-400 flex items-center justify-center shadow-md">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#5E8A6E] to-[#7AA58B] text-white flex items-center justify-center shadow-md">
             <Award className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-900 border border-amber-500/30">
+              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#E8F1EB] text-[#345741] border border-[#B6CEBE]">
                 World Pastry Champion Formula
               </span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-[#2C1E1C] font-serif">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#23372B] font-serif">
               Шеф-калькулятор и Техкарта: {pairing.primary_name} + {pairing.secondary_name}
             </h2>
           </div>
@@ -110,13 +110,13 @@ export const ChefCalculatorModal: React.FC<ChefCalculatorModalProps> = ({
         <div className="space-y-6">
           
           {/* Target Weight Controls */}
-          <div className="p-4 rounded-2xl bg-white border border-[#4A2E2B]/15 shadow-xs space-y-3">
+          <div className="p-4 rounded-2xl bg-white/90 border border-[#DAE8DF] shadow-xs space-y-3">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-bold text-[#2C1E1C] flex items-center gap-1.5 uppercase tracking-wide">
-                <Scale className="w-4 h-4 text-[#E29578]" />
+              <label className="text-xs font-bold text-[#23372B] flex items-center gap-1.5 uppercase tracking-wide">
+                <Scale className="w-4 h-4 text-[#5E8A6E]" />
                 Общий целевой вес партии (г)
               </label>
-              <span className="text-sm font-bold text-[#E87A90]">
+              <span className="text-sm font-bold text-[#5E8A6E]">
                 {targetWeight} г (выход ~{Math.round(targetWeight / 90)} порций по 90г)
               </span>
             </div>
@@ -129,21 +129,21 @@ export const ChefCalculatorModal: React.FC<ChefCalculatorModalProps> = ({
                 step="50"
                 value={targetWeight}
                 onChange={(e) => setTargetWeight(Number(e.target.value))}
-                className="w-full accent-[#4A2E2B] cursor-pointer"
+                className="w-full accent-[#5E8A6E] cursor-pointer"
               />
             </div>
 
             {/* Quick Weight Presets */}
             <div className="flex items-center gap-2 pt-1 flex-wrap text-xs">
-              <span className="text-[#6B5A57] text-[11px]">Быстрый выбор:</span>
+              <span className="text-[#556E5F] text-[11px]">Быстрый выбор:</span>
               {[500, 1000, 1500, 2000, 3000].map((w) => (
                 <button
                   key={w}
                   onClick={() => setTargetWeight(w)}
-                  className={`px-2.5 py-1 rounded-lg border text-xs font-medium transition-colors ${
+                  className={`px-2.5 py-1 rounded-lg border text-xs font-medium transition-colors cursor-pointer ${
                     targetWeight === w
-                      ? 'bg-[#4A2E2B] text-white border-[#4A2E2B]'
-                      : 'bg-[#FDFBF7] text-[#2C1E1C] border-[#4A2E2B]/20 hover:border-[#4A2E2B]/50'
+                      ? 'glass-button-primary text-white border-transparent'
+                      : 'bg-[#FAF7F2] text-[#23372B] border-[#DAE8DF] hover:border-[#5E8A6E]'
                   }`}
                 >
                   {w} г ({w === 1000 ? '1 кг' : `${w/1000} кг`})
@@ -154,65 +154,65 @@ export const ChefCalculatorModal: React.FC<ChefCalculatorModalProps> = ({
 
           {/* Layer Balance Breakdown */}
           <div className="space-y-3">
-            <h3 className="text-sm font-bold text-[#2C1E1C] flex items-center gap-1.5 font-serif">
-              <Layers className="w-4 h-4 text-purple-700" />
+            <h3 className="text-sm font-bold text-[#23372B] flex items-center gap-1.5 font-serif">
+              <Layers className="w-4 h-4 text-[#5E8A6E]" />
               Расчёт слоев и гидроколлоидов (Золотое сечение текстур)
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               
               {/* Layer 1 */}
-              <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 space-y-1">
-                <div className="flex justify-between font-bold text-amber-950">
+              <div className="p-3.5 rounded-2xl bg-[#E8F1EB]/80 border border-[#B6CEBE] space-y-1">
+                <div className="flex justify-between font-bold text-[#23372B]">
                   <span>1. Мусс / Крем ({mousseRatio}%)</span>
                   <span>{weightMousse} г</span>
                 </div>
-                <p className="text-[11px] text-[#6B5A57]">
+                <p className="text-[11px] text-[#556E5F]">
                   Доминирующий вкус: <strong>{pairing.primary_name}</strong>
                 </p>
-                <div className="mt-2 pt-2 border-t border-amber-500/15 text-[10px] text-amber-900 font-mono">
+                <div className="mt-2 pt-2 border-t border-[#B6CEBE]/50 text-[10px] text-[#345741] font-mono">
                   💧 Желатин 200 Bloom: <strong>{gelatinMousse}г</strong> (+ Вода 1:5 = {gelatinBloomWater}г)
                 </div>
               </div>
 
               {/* Layer 2 */}
-              <div className="p-3.5 rounded-2xl bg-purple-500/10 border border-purple-500/20 space-y-1">
-                <div className="flex justify-between font-bold text-purple-950">
+              <div className="p-3.5 rounded-2xl bg-[#FDF3E8]/80 border border-[#F8CCA6] space-y-1">
+                <div className="flex justify-between font-bold text-[#7D3C10]">
                   <span>2. Начинка Конфи/Курд ({insertRatio}%)</span>
                   <span>{weightInsert} г</span>
                 </div>
-                <p className="text-[11px] text-[#6B5A57]">
+                <p className="text-[11px] text-[#8B512B]">
                   Второй акцент: <strong>{pairing.secondary_name}</strong>
                 </p>
-                <div className="mt-2 pt-2 border-t border-purple-500/15 text-[10px] text-purple-900 font-mono">
+                <div className="mt-2 pt-2 border-t border-[#F8CCA6]/50 text-[10px] text-[#7D3C10] font-mono">
                   🍊 Пектин NH: <strong>{pectinInsert}г</strong> (смешать с сахаром 1:4 = {sugarPectinMix}г)
                 </div>
               </div>
 
               {/* Layer 3 */}
-              <div className="p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/20 space-y-1">
-                <div className="flex justify-between font-bold text-rose-950">
+              <div className="p-3.5 rounded-2xl bg-[#FDF0F3]/80 border border-[#F5CAD4] space-y-1">
+                <div className="flex justify-between font-bold text-[#8A2B42]">
                   <span>3. Хрустящий слой ({crunchRatio}%)</span>
                   <span>{weightCrunch} г</span>
                 </div>
-                <p className="text-[11px] text-[#6B5A57]">
+                <p className="text-[11px] text-[#8A2B42]/80">
                   Пралине / Вафельная крошка / Какао-масло
                 </p>
-                <div className="mt-2 pt-2 border-t border-rose-500/15 text-[10px] text-rose-900">
+                <div className="mt-2 pt-2 border-t border-[#F5CAD4]/50 text-[10px] text-[#8A2B42]">
                   ✨ Текстурный контраст для маслянистости
                 </div>
               </div>
 
               {/* Layer 4 */}
-              <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-1">
-                <div className="flex justify-between font-bold text-emerald-950">
+              <div className="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#DAE8DF] space-y-1">
+                <div className="flex justify-between font-bold text-[#23372B]">
                   <span>4. Бисквит / Дакуаз ({biscuitRatio}%)</span>
                   <span>{weightBiscuit} г</span>
                 </div>
-                <p className="text-[11px] text-[#6B5A57]">
+                <p className="text-[11px] text-[#556E5F]">
                   Ореховая или бисквитная основа
                 </p>
-                <div className="mt-2 pt-2 border-t border-emerald-500/15 text-[10px] text-emerald-900">
+                <div className="mt-2 pt-2 border-t border-[#DAE8DF] text-[10px] text-[#556E5F]">
                   🌾 Пропитка лёгким сиропом
                 </div>
               </div>
@@ -221,15 +221,15 @@ export const ChefCalculatorModal: React.FC<ChefCalculatorModalProps> = ({
           </div>
 
           {/* Expert Chef Guidance */}
-          <div className="p-4 rounded-2xl bg-[#4A2E2B]/5 border border-[#4A2E2B]/15 text-xs space-y-2">
-            <div className="flex items-center gap-2 text-[#4A2E2B] font-bold">
-              <ChefHat className="w-4 h-4 text-[#E29578]" />
+          <div className="p-4 rounded-2xl bg-[#E8F1EB]/50 border border-[#B6CEBE] text-xs space-y-2">
+            <div className="flex items-center gap-2 text-[#23372B] font-bold">
+              <ChefHat className="w-4 h-4 text-[#5E8A6E]" />
               <span>Совет Чемпиона по работе со вкусом «{pairing.primary_name} + {pairing.secondary_name}»:</span>
             </div>
-            <p className="text-[#6B5A57] leading-relaxed text-[11px]">
+            <p className="text-[#556E5F] leading-relaxed text-[11px]">
               {pairing.description}
             </p>
-            <div className="flex items-center gap-2 pt-1 text-[11px] font-medium text-[#2C1E1C]">
+            <div className="flex items-center gap-2 pt-1 text-[11px] font-medium text-[#23372B]">
               <span>Интенсивность: <strong>{pairing.intensity}/5</strong></span>
               <span>&bull;</span>
               <span>Экзотика: <strong>{pairing.risk}/5</strong></span>
@@ -239,18 +239,18 @@ export const ChefCalculatorModal: React.FC<ChefCalculatorModalProps> = ({
           </div>
 
           {/* Action Buttons: Print & Copy Tech Card */}
-          <div className="pt-2 flex items-center justify-between gap-3 border-t border-[#4A2E2B]/15">
+          <div className="pt-2 flex items-center justify-between gap-3 border-t border-[#DAE8DF]">
             <button
               onClick={handleCopyTechCard}
-              className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#4A2E2B]/5 border border-[#4A2E2B]/20 text-[#2C1E1C] font-semibold text-xs flex items-center gap-2 transition-colors"
+              className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#E8F1EB] border border-[#B6CEBE] text-[#23372B] font-semibold text-xs flex items-center gap-2 transition-colors cursor-pointer"
             >
-              {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-[#E29578]" />}
+              {copied ? <Check className="w-4 h-4 text-[#5E8A6E]" /> : <Copy className="w-4 h-4 text-[#5E8A6E]" />}
               <span>{copied ? 'Скопировано в буфер!' : 'Скопировать техкарту'}</span>
             </button>
 
             <button
               onClick={onClose}
-              className="px-6 py-2.5 rounded-xl bg-[#4A2E2B] text-white font-semibold text-xs hover:bg-[#3A2422] transition-colors"
+              className="px-6 py-2.5 rounded-xl glass-button text-[#23372B] font-semibold text-xs hover:bg-white transition-colors cursor-pointer"
             >
               Готово
             </button>
